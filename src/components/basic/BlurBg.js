@@ -4,15 +4,19 @@ import {
   View,
   ImageBackground,
   SafeAreaView,
+  useColorScheme,
 } from 'react-native';
 import React from 'react';
 import {BlurView} from '@react-native-community/blur';
 import GlobalCSS from './GlobalCSS';
 
-const BlurBg = ({children}) => {
+const BlurBg = ({children, imgLink}) => {
+  const isDarkMode = useColorScheme() === 'dark';
   return (
     <ImageBackground
-      source={require('./../../assets/images/bg.png')}
+      source={
+        imgLink ? {uri: imgLink} : require('./../../assets/images/bg.png')
+      }
       resizeMode="cover"
       style={[GlobalCSS.flex]}>
       <BlurView
@@ -20,7 +24,15 @@ const BlurBg = ({children}) => {
         blurType="light"
         blurAmount={15}
         reducedTransparencyFallbackColor="black">
-        <SafeAreaView style={styles.Container}>{children}</SafeAreaView>
+        <SafeAreaView
+          style={{
+            flex: 1,
+            backgroundColor: isDarkMode
+              ? 'rgba(0,0,0,0.5)'
+              : 'rgba(255,255,255,0.5)',
+          }}>
+          {children}
+        </SafeAreaView>
       </BlurView>
     </ImageBackground>
   );
@@ -28,9 +40,4 @@ const BlurBg = ({children}) => {
 
 export default BlurBg;
 
-const styles = StyleSheet.create({
-  Container: {
-    backgroundColor: 'rgba( 0, 0, 0, 0.6 )',
-    flex: 1,
-  },
-});
+const styles = StyleSheet.create({});
