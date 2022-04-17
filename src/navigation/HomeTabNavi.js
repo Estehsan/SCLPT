@@ -6,8 +6,6 @@ import {
   Mobility,
   MoreHome,
   Map,
-  Recipes,
-  Shopping,
   Sleep,
   Music,
   StopWatch,

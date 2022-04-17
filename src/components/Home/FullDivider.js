@@ -11,7 +11,7 @@ const FullDivider = ({style, greybg, vertical}) => {
       colors={
         greybg
           ? ['#ffffff08', 'white', '#ffffff08']
-          : isDarkMode
+          : !isDarkMode
           ? ['transparent', 'black', 'transparent']
           : ['transparent', 'white', 'transparent']
       }

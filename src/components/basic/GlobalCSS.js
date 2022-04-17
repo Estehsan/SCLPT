@@ -1,6 +1,6 @@
 const GlobalCSS = {
   flex: {flex: 1},
-
+  flexEnd: {flex: 1, alignItems: 'flex-end'},
   h1: {
     color: 'red',
   },

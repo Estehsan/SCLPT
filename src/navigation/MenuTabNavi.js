@@ -15,6 +15,7 @@ import {
   About,
   MobilityWorkoutStart,
   MobilityRoutine,
+  AllTracks,
 } from '../Screens/MoreScreen';
 import {theme} from '../theme';
 import Setting from '../Screens/MoreScreen/Setting';
@@ -26,7 +27,7 @@ const MenuTabNavi = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName="MoreHome"
+      initialRouteName="Menu"
       screenOptions={{
         headerBackTitleVisible: false,
         headerShadowVisible: false,
@@ -66,13 +67,22 @@ const MenuTabNavi = () => {
       <Stack.Screen name="Recipes" component={Recipes} />
       <Stack.Screen name="Shopping" component={Shopping} />
       <Stack.Screen name="Sleep" component={Sleep} />
-      <Stack.Screen
-        options={{
-          headerShown: false,
-        }}
-        name="Music"
-        component={Music}
-      />
+      <Stack.Group>
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Music"
+          component={Music}
+        />
+        <Stack.Screen
+          options={{
+            presentation: 'modal',
+          }}
+          name="AllTracks"
+          component={AllTracks}
+        />
+      </Stack.Group>
       <Stack.Screen name="StopWatch" component={StopWatch} />
 
       <Stack.Screen name="Legal" component={Legal} />

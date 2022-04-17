@@ -10,6 +10,7 @@ import StopWatch from './StopWatch';
 import Legal from './Legal';
 import About from './About';
 import MobilityRoutine from './MobilityRoutine';
+import AllTracks from './AllTracks';
 export {
   About,
   Legal,
@@ -23,4 +24,5 @@ export {
   Music,
   StopWatch,
   MobilityRoutine,
+  AllTracks,
 };
