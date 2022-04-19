@@ -28,7 +28,7 @@ const MenuTabNavi = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName="Menu"
+      initialRouteName="Music"
       screenOptions={{
         headerBackTitleVisible: false,
         headerShadowVisible: false,
@@ -81,6 +81,7 @@ const MenuTabNavi = () => {
         />
         <Stack.Screen
           options={{
+            title: 'MY PLAYLIST',
             presentation: 'modal',
           }}
           name="AllTracks"

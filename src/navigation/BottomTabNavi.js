@@ -38,6 +38,7 @@ const BottomTabNavi = () => {
 
   return (
     <Tab.Navigator
+      initialRouteName="MenuTabNavi"
       screenOptions={({route}) => ({
         tabBarLabelStyle: labetStyle,
 

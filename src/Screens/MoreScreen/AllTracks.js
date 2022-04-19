@@ -1,11 +1,21 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {DarkBg} from '../../components/basic';
+import {BlurBg, DarkBg} from '../../components/basic';
 import {HeaderTopBar} from '../../components/Common';
 
-const AllTracks = () => {
+const AllTracks = ({route, navigation}) => {
+  const {bgImag} = route.params;
   return (
-    <DarkBg>
+    <BlurBg imgLink={bgImg}>
+      <LiftOfTracks />
+    </BlurBg>
+  );
+};
+
+const LiftOfTracks = ({route, navigation}) => {
+  const {imgLink} = route.params;
+  return (
+    <DarkBg imgLink={imgLink}>
       <Text>naik</Text>
     </DarkBg>
   );

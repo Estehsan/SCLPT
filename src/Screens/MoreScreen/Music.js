@@ -23,12 +23,13 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
+const imgLink =
+  'https://images.unsplash.com/photo-1525362081669-2b476bb628c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
 const Music = ({navigation}) => {
   const [play, setPlay] = useState(true);
   const isDarkMode = useColorScheme() === 'dark';
   return (
-    <BlurBg
-      imgLink={`https://images.unsplash.com/photo-1525362081669-2b476bb628c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80`}>
+    <BlurBg imgLink={imgLink}>
       <HeaderTopBar
         onBack={() => {
           navigation.goBack();
@@ -119,7 +120,11 @@ const Music = ({navigation}) => {
             GlobalCSS.alignItemsCenter,
           ]}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('AllTracks')}
+            onPress={() =>
+              navigation.navigate('AllTracks', {
+                bgImg: imgLink,
+              })
+            }
             style={[GlobalCSS.alignItemsCenter]}>
             <H3>ALL TRACKS</H3>
             <View>
