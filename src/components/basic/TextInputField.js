@@ -30,6 +30,7 @@ export default TextInputField;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'transparent',
+    paddingVertical: 5,
   },
   input: {
     width: '100%',

@@ -11,7 +11,7 @@ import React from 'react';
 import {Title} from 'react-native-paper';
 import {theme} from '../../theme';
 
-const WhiteRoundBtn = ({children, onPress, size}) => {
+const WhiteRoundBtn = ({children, onPress, size, staticColor}) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <TouchableOpacity
@@ -21,7 +21,9 @@ const WhiteRoundBtn = ({children, onPress, size}) => {
           ? {height: size, width: size, borderRadius: size}
           : {height: 40, width: 40, borderRadius: 40},
         {
-          backgroundColor: isDarkMode
+          backgroundColor: staticColor
+            ? staticColor
+            : isDarkMode
             ? theme.colors.header
             : theme.colors.accent,
         },

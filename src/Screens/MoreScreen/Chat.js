@@ -49,7 +49,7 @@ const MessageData = [
       'https://static.vecteezy.com/system/resources/previews/002/275/847/original',
   },
 ];
-const Chat = () => {
+const Chat = ({navigation}) => {
   return (
     <DarkBg>
       {/* Main START 👇👇 */}
@@ -69,7 +69,9 @@ const Chat = () => {
         <FlatList
           data={MessageData}
           ItemSeparatorComponent={() => <FullDivider style={{opacity: 0.2}} />}
-          renderItem={({item}) => <ConversationList item={item} />}
+          renderItem={({item}) => (
+            <ConversationList navigation={navigation} item={item} />
+          )}
         />
       </View>
 

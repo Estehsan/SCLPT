@@ -14,6 +14,9 @@ const GlobalCSS = {
   justifyCenter: {
     justifyContent: 'center',
   },
+  justifyEnd: {
+    justifyContent: 'flex-end',
+  },
   justifyBetween: {
     justifyContent: 'space-between',
   },
@@ -38,7 +41,7 @@ const GlobalCSS = {
     xsm: {paddingHorizontal: 8},
     xmd: {paddingHorizontal: 20},
     xlg: {paddingHorizontal: 26},
-    xxl: {paddingHorizontal: 30},
+    xxl: {paddingHorizontal: 40},
     yxs: {paddingVertical: 4},
     ysm: {paddingVertical: 8},
     ymd: {paddingVertical: 16},

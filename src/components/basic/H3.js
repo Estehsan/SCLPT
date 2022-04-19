@@ -2,14 +2,14 @@ import {StyleSheet, useColorScheme, Text} from 'react-native';
 import React from 'react';
 import {theme} from '../../theme';
 
-const H3 = ({children, font, color}) => {
+const H3 = ({children, font, color, size}) => {
   const isDarkMode = useColorScheme() === 'light';
 
   return (
     <>
       <Text
         style={{
-          fontSize: 12,
+          fontSize: size ? size : 12,
           color: color
             ? color
             : isDarkMode

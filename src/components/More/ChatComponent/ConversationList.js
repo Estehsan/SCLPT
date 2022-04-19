@@ -1,25 +1,40 @@
-import {StyleSheet, Text, View, useColorScheme} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  useColorScheme,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
-import {GlobalCSS, H2, H3, P, PGrey} from '../basic';
+import {GlobalCSS, H2, H3, P, PGrey} from './../../../components/basic';
 import {Avatar} from 'react-native-paper';
+import {theme} from '../../../theme';
 
-import {theme} from '../../theme';
-
-const ConversationList = ({item}) => {
+const ConversationList = ({item, navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
+  const {name, message, time, avatarImage} = item;
   return (
-    <View style={styles.Main}>
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('Conversation', {
+          name,
+          message,
+          time,
+          avatarImage,
+        });
+      }}
+      style={styles.Main}>
       <View style={[GlobalCSS.row]}>
         <Avatar.Image
           size={50}
           style={{backgroundColor: theme.colors.lightgrey}}
           source={{
-            uri: item.avatarImage,
+            uri: avatarImage,
           }}
         />
         <View style={[GlobalCSS.padding.xsm]}>
-          <H2>{item.name}</H2>
-          <H3 color={theme.colors.grey}>{item.message}</H3>
+          <H2>{name}</H2>
+          <H3 color={theme.colors.grey}>{message}</H3>
         </View>
       </View>
       <View style={styles.right}>
@@ -32,10 +47,10 @@ const ConversationList = ({item}) => {
             letterSpacing: 1,
             lineHeight: 24,
           }}>
-          {item.time}
+          {time}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

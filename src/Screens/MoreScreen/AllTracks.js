@@ -6,7 +6,7 @@ import {HeaderTopBar} from '../../components/Common';
 const AllTracks = () => {
   return (
     <DarkBg>
-      
+      <Text>naik</Text>
     </DarkBg>
   );
 };

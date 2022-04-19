@@ -11,6 +11,7 @@ import Legal from './Legal';
 import About from './About';
 import MobilityRoutine from './MobilityRoutine';
 import AllTracks from './AllTracks';
+import Conversation from './Conversation';
 export {
   About,
   Legal,
@@ -25,4 +26,5 @@ export {
   StopWatch,
   MobilityRoutine,
   AllTracks,
+  Conversation,
 };

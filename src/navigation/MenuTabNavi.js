@@ -16,6 +16,7 @@ import {
   MobilityWorkoutStart,
   MobilityRoutine,
   AllTracks,
+  Conversation,
 } from '../Screens/MoreScreen';
 import {theme} from '../theme';
 import Setting from '../Screens/MoreScreen/Setting';
@@ -56,7 +57,10 @@ const MenuTabNavi = () => {
       }}>
       <Stack.Screen name="Menu" component={MoreHome} />
 
-      <Stack.Screen name="Chat" component={Chat} />
+      <Stack.Group>
+        <Stack.Screen name="Chat" component={Chat} />
+        <Stack.Screen name="Conversation" component={Conversation} />
+      </Stack.Group>
       <Stack.Screen name="Map" component={Map} />
 
       <Stack.Group>
