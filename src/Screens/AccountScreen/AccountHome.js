@@ -5,6 +5,7 @@ import {
   ImageBackground,
   useColorScheme,
   Image,
+  TouchableOpacity,
   FlatList,
 } from 'react-native';
 import React from 'react';

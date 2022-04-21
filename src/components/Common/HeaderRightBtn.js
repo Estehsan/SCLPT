@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {GlobalCSS, H2} from '../basic';
 import Fontisto from 'react-native-vector-icons/Fontisto';
@@ -6,7 +6,9 @@ import {theme} from '../../theme';
 
 const HeaderRightBtn = () => {
   return (
-    <View style={styles.notification}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('Notification')}
+      style={styles.notification}>
       <Fontisto name="bell" color="grey" size={22} />
       <View
         style={{
@@ -17,7 +19,7 @@ const HeaderRightBtn = () => {
           backgroundColor: theme.colors.primary,
         }}
       />
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -1,4 +1,10 @@
-import {StyleSheet, Text, View, useColorScheme} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  useColorScheme,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useLayoutEffect} from 'react';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import {ClockSubSleep, RoutineSubSleep} from './SleepSubScreens';
@@ -13,7 +19,8 @@ const Sleep = ({navigation}) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <View
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Notification')}
           style={{
             marginRight: 10,
             justifyContent: 'center',
@@ -29,7 +36,7 @@ const Sleep = ({navigation}) => {
               backgroundColor: theme.colors.primary,
             }}
           />
-        </View>
+        </TouchableOpacity>
       ),
     });
   }, [navigation]);

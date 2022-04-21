@@ -60,7 +60,12 @@ const HomeTabNavi = () => {
       />
 
       <Stack.Screen name="Map" component={Map} />
-      <Stack.Screen name="Notification" component={Notification} />
+      <Stack.Group
+        screenOptions={{
+          presentation: 'modal',
+        }}>
+        <Stack.Screen name="Notification" component={Notification} />
+      </Stack.Group>
     </Stack.Navigator>
   );
 };

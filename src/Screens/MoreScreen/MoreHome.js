@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, FlatList} from 'react-native';
+import {StyleSheet, Text, View, FlatList, TouchableOpacity} from 'react-native';
 import React, {useLayoutEffect} from 'react';
 import {IconBoxes} from '../../components/More';
 import {DarkBg, GlobalCSS, H2} from '../../components/basic';
@@ -105,10 +105,12 @@ const MoreHome = ({navigation}) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <View style={styles.notification}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Notification')}
+          style={styles.notification}>
           <Fontisto name="bell" color="grey" size={22} />
           <View style={styles.spacing} />
-        </View>
+        </TouchableOpacity>
       ),
     });
   }, [navigation]);

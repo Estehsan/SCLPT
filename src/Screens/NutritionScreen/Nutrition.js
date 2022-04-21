@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, FlatList} from 'react-native';
+import {StyleSheet, Text, View, FlatList, TouchableOpacity} from 'react-native';
 import React, {useState, useLayoutEffect} from 'react';
 import {DarkBg, GlobalCSS, Heading} from '../../components/basic';
 import ListOfPrograms from '../../components/Auth/ListOfPrograms';
@@ -39,7 +39,9 @@ const Nutrition = ({navigation}) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <View style={styles.notification}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Notification')}
+          style={styles.notification}>
           <Fontisto name="bell" color="grey" size={22} />
           <View
             style={{
@@ -50,7 +52,7 @@ const Nutrition = ({navigation}) => {
               backgroundColor: theme.colors.primary,
             }}
           />
-        </View>
+        </TouchableOpacity>
       ),
     });
   }, [navigation]);
