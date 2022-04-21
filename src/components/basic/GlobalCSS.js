@@ -4,6 +4,7 @@ const GlobalCSS = {
   h1: {
     color: 'red',
   },
+
   row: {
     display: 'flex',
     flexDirection: 'row',
@@ -59,6 +60,50 @@ const GlobalCSS = {
     ymd: {marginVertical: 16},
     ylg: {marginVertical: 24},
     yxl: {marginVertical: 30},
+  },
+  fixedContainer: {
+    r10: {
+      height: 10,
+      width: 10,
+      borderRadius: 10,
+    },
+    r20: {
+      height: 20,
+      width: 20,
+      borderRadius: 20,
+    },
+    r30: {
+      height: 30,
+      width: 30,
+      borderRadius: 30,
+    },
+    r40: {
+      height: 40,
+      width: 40,
+      borderRadius: 40,
+    },
+    r50: {
+      height: 50,
+      width: 50,
+      borderRadius: 50,
+    },
+
+    s10: {
+      height: 10,
+      width: 10,
+    },
+    s20: {
+      height: 20,
+      width: 20,
+    },
+    s30: {
+      height: 30,
+      width: 30,
+    },
+    s40: {
+      height: 40,
+      width: 40,
+    },
   },
   spacing: {
     pt2: {paddingTop: 2},

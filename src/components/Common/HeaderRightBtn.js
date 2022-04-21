@@ -4,7 +4,7 @@ import {GlobalCSS, H2} from '../basic';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import {theme} from '../../theme';
 
-const HeaderRightBtn = () => {
+const HeaderRightBtn = ({navigation}) => {
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate('Notification')}

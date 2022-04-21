@@ -64,7 +64,13 @@ const HomeTabNavi = () => {
         screenOptions={{
           presentation: 'modal',
         }}>
-        <Stack.Screen name="Notification" component={Notification} />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Notification"
+          component={Notification}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );

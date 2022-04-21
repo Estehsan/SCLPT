@@ -22,6 +22,7 @@ export const theme = {
     tgrey: '#C4C4C4',
     tbtn: '#f85c60',
     tabColor: '#313034',
+    tabColorLight: '#31303432',
   },
   customShadow: {
     shadowColor: '#000',
