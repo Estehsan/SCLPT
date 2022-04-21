@@ -16,6 +16,7 @@ import {
   ProgramScreen,
   SpecificWorkoutStart,
 } from '../Screens/HomeWorkoutScreen';
+import Notification from './../Screens/Notification';
 
 const Stack = createNativeStackNavigator();
 
@@ -59,6 +60,7 @@ const HomeTabNavi = () => {
       />
 
       <Stack.Screen name="Map" component={Map} />
+      <Stack.Screen name="Notification" component={Notification} />
     </Stack.Navigator>
   );
 };

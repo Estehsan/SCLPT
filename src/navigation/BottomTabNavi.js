@@ -38,7 +38,7 @@ const BottomTabNavi = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName="MenuTabNavi"
+      initialRouteName="Workouts"
       screenOptions={({route}) => ({
         tabBarLabelStyle: labetStyle,
 

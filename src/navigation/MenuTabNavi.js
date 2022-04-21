@@ -28,7 +28,7 @@ const MenuTabNavi = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName="Music"
+      initialRouteName="Menu"
       screenOptions={{
         headerBackTitleVisible: false,
         headerShadowVisible: false,
@@ -89,7 +89,6 @@ const MenuTabNavi = () => {
         />
       </Stack.Group>
       <Stack.Screen name="StopWatch" component={StopWatch} />
-
       <Stack.Screen name="Legal" component={Legal} />
       <Stack.Screen name="Setting" component={Setting} />
       <Stack.Screen name="About" component={About} />

@@ -1,4 +1,10 @@
-import {StyleSheet, Text, View, FlatList, useColorScheme} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  useColorScheme,
+} from 'react-native';
 import React from 'react';
 import {ListOfOnboarding} from '../../components/Auth';
 import {BlurBg, GlobalCSS, HL} from '../../components/basic';
@@ -17,7 +23,8 @@ const Home = ({navigation}) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <View
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Notification')}
           style={{
             marginRight: 10,
             justifyContent: 'center',
@@ -33,7 +40,7 @@ const Home = ({navigation}) => {
               backgroundColor: theme.colors.primary,
             }}
           />
-        </View>
+        </TouchableOpacity>
       ),
     });
   }, [navigation]);
