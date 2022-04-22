@@ -7,13 +7,14 @@ import {
   useColorScheme,
 } from 'react-native';
 import React, {useLayoutEffect} from 'react';
-import {DarkBg, GlobalCSS, Heading} from '../components/basic';
+import {DarkBg, GlobalCSS, H1, Heading} from '../components/basic';
 import {NavigationContainer} from '@react-navigation/native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {theme} from '../theme';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {NotificationList, PlusGreenBtn} from '../components/Common';
 import FeedList from '../components/Feed/FeedList';
+import ArtWorkSvg from './../assets/images/ArtWorkSvg';
 
 const data = [
   {
@@ -52,7 +53,8 @@ const data = [
 ];
 
 const Notification = ({navigation}) => {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === '!dark';
+  const [NotificationData, setNotificationData] = React.useState(data);
 
   return (
     <DarkBg>
@@ -68,6 +70,7 @@ const Notification = ({navigation}) => {
         </View>
 
         <TouchableOpacity
+          onPress={() => setNotificationData([])}
           style={{
             height: 30,
             width: 30,
@@ -86,12 +89,31 @@ const Notification = ({navigation}) => {
         </TouchableOpacity>
       </View>
 
-      <FlatList
-        data={data}
-        renderItem={({item}) => (
-          <NotificationList item={item} navigation={navigation} />
-        )}
-      />
+      {NotificationData.length === 0 ? (
+        <View
+          style={[
+            GlobalCSS.justifyCenter,
+            GlobalCSS.alignItemsCenter,
+            GlobalCSS.flex,
+          ]}>
+          <View
+            style={[
+              GlobalCSS.justifyCenter,
+              GlobalCSS.alignItemsCenter,
+              {height: 250, width: 250},
+            ]}>
+            <ArtWorkSvg />
+            <Heading>It's Empty here</Heading>
+          </View>
+        </View>
+      ) : (
+        <FlatList
+          data={NotificationData}
+          renderItem={({item}) => (
+            <NotificationList item={item} navigation={navigation} />
+          )}
+        />
+      )}
     </DarkBg>
   );
 };

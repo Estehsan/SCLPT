@@ -10,7 +10,6 @@ import React, {useState} from 'react';
 import {DarkBg, GlobalCSS, H2, H3, Heading, P} from '../../components/basic';
 import {PlusGreenBtn} from '../../components/Common';
 import Entypo from 'react-native-vector-icons/Entypo';
-import Swipeable from 'react-native-gesture-handler/Swipeable';
 import {theme} from '../../theme';
 import {FullDivider} from '../../components/Home';
 import {DeleteSwipe} from '../../components/More';

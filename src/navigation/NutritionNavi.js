@@ -41,7 +41,13 @@ const NutritionNavi = () => {
         },
         headerTintColor: isDarkMode ? theme.colors.bg : theme.colors.accent,
       }}>
-      <Stack.Screen name="Nutrition" component={Nutrition} />
+      <Stack.Screen
+        options={{
+          headerTitle: 'Nutrition',
+        }}
+        name="Nutritions"
+        component={Nutrition}
+      />
       <Stack.Screen name="MealWeekly" component={MealWeekly} />
       <Stack.Screen
         name="RecipeNutrition"

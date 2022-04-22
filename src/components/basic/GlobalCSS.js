@@ -104,6 +104,19 @@ const GlobalCSS = {
       height: 40,
       width: 40,
     },
+    s50: {
+      height: 50,
+      width: 50,
+    },
+    s70: {
+      height: 70,
+      width: 70,
+    },
+
+    s100: {
+      height: 100,
+      width: 100,
+    },
   },
   spacing: {
     pt2: {paddingTop: 2},

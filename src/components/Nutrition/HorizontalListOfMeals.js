@@ -1,4 +1,10 @@
-import {StyleSheet, Text, View, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import {theme} from '../../theme';
 import {GlobalCSS, H1, H2, H3, P} from '../basic';
@@ -18,62 +24,67 @@ const HorizontalListOfMeals = ({item, onPress, navigation}) => {
         useAngle={true}
         angle={0}
         style={styles.container}>
-        <View
-          style={[
-            GlobalCSS.row,
-            GlobalCSS.justifyBetween,
-            GlobalCSS.padding.ysm,
-          ]}>
-          <View>
-            <H1 color={'white'}>{title}</H1>
-            <H2 font={'BebasNeue-Regular'} color={'white'}>
-              {quantity}
-            </H2>
+        <TouchableOpacity onPress={onPress}>
+          <View
+            style={[
+              GlobalCSS.row,
+              GlobalCSS.justifyBetween,
+              GlobalCSS.padding.ysm,
+            ]}>
+            <View>
+              <H1 color={'white'}>{title}</H1>
+              <H2 font={'BebasNeue-Regular'} color={'white'}>
+                {quantity}
+              </H2>
+            </View>
+            {fill ? (
+              <AnimatedCircularProgress
+                size={50}
+                width={4}
+                fill={fill}
+                tintColor={theme.colors.primary}
+                backgroundColor="grey">
+                {fill => <P>{fill}</P>}
+              </AnimatedCircularProgress>
+            ) : null}
           </View>
-          {fill ? (
-            <AnimatedCircularProgress
-              size={50}
-              width={4}
-              fill={fill}
-              tintColor={theme.colors.primary}
-              backgroundColor="grey">
-              {fill => <P>{fill}</P>}
-            </AnimatedCircularProgress>
-          ) : null}
-        </View>
-        {/* BOTTOM */}
+          {/* BOTTOM */}
 
-        <FullDivider greybg style={([GlobalCSS.margin.ysm], {opacity: 0.7})} />
-        <View style={[GlobalCSS.row, GlobalCSS.justifyEvenly]}>
-          <View>
-            <H2 font={'BebasNeue-Regular'} color={'white'}>
-              {protein}
-            </H2>
+          <FullDivider
+            greybg
+            style={([GlobalCSS.margin.ysm], {opacity: 0.7})}
+          />
+          <View style={[GlobalCSS.row, GlobalCSS.justifyEvenly]}>
+            <View>
+              <H2 font={'BebasNeue-Regular'} color={'white'}>
+                {protein}
+              </H2>
 
-            <H2 font={'BebasNeue-Regular'} color={theme.colors.grey}>
-              CAL
-            </H2>
-          </View>
-          <FullDivider greybg vertical style={{opacity: 0.2}} />
-          <View>
-            <H2 font={'BebasNeue-Regular'} color={'white'}>
-              {carbs}
-            </H2>
-            <H2 font={'BebasNeue-Regular'} color={theme.colors.grey}>
-              CAL
-            </H2>
-          </View>
-          <FullDivider greybg vertical style={{opacity: 0.2}} />
+              <H2 font={'BebasNeue-Regular'} color={theme.colors.grey}>
+                CAL
+              </H2>
+            </View>
+            <FullDivider greybg vertical style={{opacity: 0.2}} />
+            <View>
+              <H2 font={'BebasNeue-Regular'} color={'white'}>
+                {carbs}
+              </H2>
+              <H2 font={'BebasNeue-Regular'} color={theme.colors.grey}>
+                CAL
+              </H2>
+            </View>
+            <FullDivider greybg vertical style={{opacity: 0.2}} />
 
-          <View>
-            <H2 font={'BebasNeue-Regular'} color={'white'}>
-              {fat}
-            </H2>
-            <H2 font={'BebasNeue-Regular'} color={theme.colors.grey}>
-              CAL
-            </H2>
+            <View>
+              <H2 font={'BebasNeue-Regular'} color={'white'}>
+                {fat}
+              </H2>
+              <H2 font={'BebasNeue-Regular'} color={theme.colors.grey}>
+                CAL
+              </H2>
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
       </LinearGradient>
     </>
   );

@@ -15,7 +15,7 @@ const NotificationList = ({item}) => {
   const {title, image, time, location, like, comment, share, profileImage} =
     item;
   return (
-    <View>
+    <View style={[GlobalCSS.padding.ymd]}>
       <View style={[GlobalCSS.row, GlobalCSS.flex, {...theme.customShadow2}]}>
         <View style={[GlobalCSS.alignItemsCenter, GlobalCSS.padding.xmd]}>
           <View
@@ -26,8 +26,8 @@ const NotificationList = ({item}) => {
               ,
               {
                 backgroundColor: isDarkMode
-                  ? theme.colors.tabColorLight
-                  : '#fff',
+                  ? theme.colors.header
+                  : theme.colors.accent,
                 ...theme.customShadow,
               },
             ]}>
@@ -52,8 +52,8 @@ const NotificationList = ({item}) => {
               GlobalCSS.padding.xsm,
               {
                 backgroundColor: isDarkMode
-                  ? theme.colors.tabColorLight
-                  : '#fff',
+                  ? theme.colors.header
+                  : theme.colors.accent,
               },
             ]}>
             <PlusGreenBtn>
@@ -64,9 +64,7 @@ const NotificationList = ({item}) => {
               <H3 color={theme.colors.grey}>ACHIEVE 85kg</H3>
             </View>
           </View>
-          <View style={[GlobalCSS.padding.ymd]}>
-            <FullDivider style={{opacity: 0.2}} />
-          </View>
+          <View style={[GlobalCSS.padding.ymd]}></View>
         </View>
       </View>
     </View>

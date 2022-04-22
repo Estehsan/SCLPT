@@ -1,10 +1,17 @@
-import {StyleSheet, Text, View, useColorScheme, FlatList} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  useColorScheme,
+  FlatList,
+} from 'react-native';
 import React, {useLayoutEffect} from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {theme} from '../../theme';
 import {DarkBg, GlobalCSS, HL} from '../../components/basic';
 import {FullDivider, WeeklyProgramDayExercise} from '../../components/Home';
-
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 const Tab = createMaterialTopTabNavigator();
 
 const data = [
@@ -33,6 +40,19 @@ const ProgramScreen = ({route, navigation}) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: () => <HL>Program {id}</HL>,
+      headerRight: () => (
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('AddAProgram');
+          }}>
+          <MaterialCommunityIcons
+            name="pencil"
+            size={28}
+            color={isDarkMode ? theme.colors.bg : theme.colors.accent}
+          />
+        </TouchableOpacity>
+      ),
+
       headerStyle: {
         backgroundColor: isDarkMode ? theme.colors.accent : theme.colors.header,
       },

@@ -12,6 +12,7 @@ import {
 } from '../Screens/MoreScreen';
 import {theme} from '../theme';
 import {
+  AddAProgram,
   Home,
   ProgramScreen,
   SpecificWorkoutStart,
@@ -72,6 +73,7 @@ const HomeTabNavi = () => {
           component={Notification}
         />
       </Stack.Group>
+      <Stack.Screen name="AddAProgram" component={AddAProgram} />
     </Stack.Navigator>
   );
 };

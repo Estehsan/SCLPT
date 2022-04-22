@@ -2,6 +2,7 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
   useColorScheme,
   FlatList,
   Dimensions,
@@ -14,6 +15,7 @@ import {theme} from '../../theme';
 import {DarkBg, GlobalCSS, H2, Heading, HL} from '../../components/basic';
 import {FullDivider, WeeklyProgramDayExercise} from '../../components/Home';
 import HorizontalListOfMeals from '../../components/Nutrition/HorizontalListOfMeals';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -59,7 +61,16 @@ const MealWeekly = ({route, navigation}) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       tabBarScrollEnabled: true,
-      headerTitle: () => <HL>Program {id}</HL>,
+      headerTitle: () => <HL>asdsad {id}</HL>,
+      headerRight: () => (
+        <TouchableOpacity>
+          <MaterialCommunityIcons
+            name="pencil"
+            size={28}
+            color={isDarkMode ? theme.colors.bg : theme.colors.accent}
+          />
+        </TouchableOpacity>
+      ),
       headerStyle: {
         backgroundColor: isDarkMode ? theme.colors.accent : theme.colors.header,
       },
