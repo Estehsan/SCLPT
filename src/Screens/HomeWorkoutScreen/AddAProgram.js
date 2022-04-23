@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View, useColorScheme} from 'react-native';
 import React from 'react';
-import {DarkBg, Heading} from '../../components/basic';
+import {DarkBg, GlobalCSS, Heading} from '../../components/basic';
 import {List} from 'react-native-paper';
 import {theme} from '../../theme';
 import {Accordian} from '../../components/Common';
@@ -16,8 +16,9 @@ const AddAProgram = () => {
 
   return (
     <DarkBg>
-      <Heading>ADD A PROGRAM</Heading>
-
+      <View style={[GlobalCSS.padding.xmd, GlobalCSS.padding.ysm]}>
+        <Heading>ADD A PROGRAM</Heading>
+      </View>
       <Accordian title={'TITLE'} description={'WOW YOU ARE GOING BRO'} />
     </DarkBg>
   );
