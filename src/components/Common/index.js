@@ -6,6 +6,7 @@ import WhiteRoundBtn from './WhiteRoundBtn';
 import HeaderTopBar from './HeaderTopBar';
 import NotificationList from './NotificationList';
 import Accordian from './Accordion';
+import CommonTitleHeader from './CommonTitleHeader';
 
 export {
   WhiteRoundBtn,
@@ -14,6 +15,7 @@ export {
   TopBar,
   PlusGreenBtn,
   Accordian,
+  CommonTitleHeader,
   CircleProgress,
   HeaderRightBtn,
 };

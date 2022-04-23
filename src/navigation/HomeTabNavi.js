@@ -18,6 +18,7 @@ import {
   SpecificWorkoutStart,
 } from '../Screens/HomeWorkoutScreen';
 import Notification from './../Screens/Notification';
+import {AddGoals} from '../Screens/HomeWorkoutScreen/HomeTopNav';
 
 const Stack = createNativeStackNavigator();
 
@@ -52,9 +53,21 @@ const HomeTabNavi = () => {
         },
         headerTintColor: isDarkMode ? theme.colors.bg : theme.colors.accent,
       }}>
-      <Stack.Screen name="Workout" component={Home} />
+      <Stack.Group>
+        <Stack.Screen name="Workout" component={Home} />
+        <Stack.Screen
+          options={{
+            title: 'Add A Goal',
+          }}
+          name="AddGoals"
+          component={AddGoals}
+        />
+      </Stack.Group>
+      <Stack.Group>
+        <Stack.Screen name="ProgramScreen" component={ProgramScreen} />
+        <Stack.Screen name="AddAProgram" component={AddAProgram} />
+      </Stack.Group>
 
-      <Stack.Screen name="ProgramScreen" component={ProgramScreen} />
       <Stack.Screen
         name="SpecificWorkoutStart"
         component={SpecificWorkoutStart}
@@ -73,7 +86,6 @@ const HomeTabNavi = () => {
           component={Notification}
         />
       </Stack.Group>
-      <Stack.Screen name="AddAProgram" component={AddAProgram} />
     </Stack.Navigator>
   );
 };

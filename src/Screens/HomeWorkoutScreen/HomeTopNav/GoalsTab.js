@@ -66,7 +66,7 @@ const ALLDATA = [
   },
 ];
 
-const GoalsTab = () => {
+const GoalsTab = ({navigation}) => {
   const window = useWindowDimensions();
   const isDarkMode = useColorScheme() === 'light';
 
@@ -112,7 +112,7 @@ const GoalsTab = () => {
             ]}>
             <Heading>{section.mainTitle}</Heading>
             {section.bg ? (
-              <PlusGreenBtn onPress={() => {}}>
+              <PlusGreenBtn onPress={() => navigation.navigate('AddGoals')}>
                 <Entypo name="plus" size={28} color="white" />
               </PlusGreenBtn>
             ) : null}
