@@ -8,10 +8,12 @@ import {
   Provider as PaperProvider,
   Title,
 } from 'react-native-paper';
-import {LogBox} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import Navigation from './src/navigation';
+import {LogBox} from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs(); //Ignore all log notifications
 
 const fontConfig = {
   ios: {
