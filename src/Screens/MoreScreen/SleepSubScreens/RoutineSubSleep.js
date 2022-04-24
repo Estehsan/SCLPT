@@ -15,21 +15,25 @@ const RoutineSubSleep = () => {
       <View style={[GlobalCSS.padding.xmd, GlobalCSS.padding.ymd]}>
         <Heading>MY SLEEP ROUTINE</Heading>
         <TextInputField
+          darkmode
           placeholder="7:00 AM"
           title="Sleep Time"
           value="password"
         />
         <TextInputField
+          darkmode
           placeholder="5:00 AM"
           title="Wakeup time"
           value="password"
         />
         <TextInputField
+          darkmode
           placeholder="Hip hope tone"
           title="Ringtone"
           value="password"
         />
         <TextInputField
+          darkmode
           placeholder="Everyday"
           title="Schedule"
           value="password"

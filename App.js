@@ -6,7 +6,7 @@ import {
   configureFonts,
   DefaultTheme,
   Provider as PaperProvider,
-  Title,
+  Title, 
 } from 'react-native-paper';
 
 import {NavigationContainer} from '@react-navigation/native';

@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import {Modal} from 'react-native-paper';
+import {Divider, Modal} from 'react-native-paper';
 
 import React, {useState} from 'react';
 import {
@@ -25,6 +25,9 @@ import {Paragraph, Title} from 'react-native-paper';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {LineChart} from 'react-native-chart-kit';
+import HorizontalWeeklyButtons from '../../../components/Home/HorizontalWeeklyButtons';
+import DividerSVG from '../../../assets/images/DividerSVG';
+import {Picker} from '@react-native-picker/picker';
 
 const data = {
   labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
@@ -70,6 +73,28 @@ const chartConfig = {
 
 const ProgressTab = () => {
   const isDarkMode = useColorScheme() === 'dark';
+  const ref = React.useRef(null);
+  const [index, setIndex] = useState(1);
+
+  const [Sets, setSets] = useState();
+  const [Reps, setReps] = useState();
+
+  const pickerRef = React.useRef();
+
+  function open() {
+    pickerRef.current.focus();
+  }
+
+  function close() {
+    pickerRef.current.blur();
+  }
+  React.useEffect(() => {
+    ref.current?.scrollToIndex({
+      index,
+      animated: true,
+      viewPosition: 0.5,
+    });
+  }, [index]);
 
   const [visible, setVisible] = useState(false);
 
@@ -246,35 +271,101 @@ const ProgressTab = () => {
       </ScrollView>
       <Modal
         visible={visible}
+        presentationStyle="overFullScrexren"
         onDismiss={hideModal}
+        initialScrollIndex={index}
+        ref={ref}
         contentContainerStyle={styles.containerStyle}>
-        <FlatList
-          horizontal
-          data={[
-            {
-              Day: 'Monday',
-            },
-            {
-              Day: 'Tuesday',
-            },
-            {
-              Day: 'Wednesday',
-            },
-            {
-              Day: 'Thursday',
-            },
-            {
-              Day: 'Friday',
-            },
-            {
-              Day: 'Saturday',
-            },
-            {
-              Day: 'Sunday',
-            },
-          ]}
-          renderItem={({item}) => <HL>{item.Day}</HL>}
-        />
+        <View>
+          <FlatList
+            horizontal
+            initialScrollIndex={index}
+            ref={ref}
+            data={[
+              {
+                Day: 'Monday',
+              },
+              {
+                Day: 'Tuesday',
+              },
+              {
+                Day: 'Wednesday',
+              },
+              {
+                Day: 'Thursday',
+              },
+              {
+                Day: 'Friday',
+              },
+              {
+                Day: 'Saturday',
+              },
+              {
+                Day: 'Sunday',
+              },
+            ]}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({item, index: windex}) => (
+              <HorizontalWeeklyButtons
+                item={item}
+                index={index}
+                ref={ref}
+                windex={windex}
+                onPress={() => {
+                  setIndex(windex);
+                }}
+              />
+            )}
+          />
+        </View>
+        <View style={{height: 20}}>
+          <DividerSVG />
+        </View>
+        <View
+          style={[
+            GlobalCSS.row,
+            GlobalCSS.justifyCenter,
+            GlobalCSS.alignItemsCenter,
+          ]}>
+          <Picker
+            style={{width: 100}}
+            selectedValue={Reps}
+            mode="dialog"
+            onValueChange={(itemValue, itemIndex) => setReps(itemValue)}>
+            <Picker.Item label="1" value="1" />
+            <Picker.Item label="2" value="2" />
+            <Picker.Item label="3" value="3" />
+            <Picker.Item label="4" value="4" />
+            <Picker.Item label="5" value="5" />
+            <Picker.Item label="6" value="6" />
+            <Picker.Item label="7" value="7" />
+            <Picker.Item label="8" value="8" />
+            <Picker.Item label="9" value="9" />
+            <Picker.Item label="10" value="10" />
+            <Picker.Item label="11" value="11" />
+            <Picker.Item label="12" value="12" />
+            <Picker.Item label="13" value="13" />
+            <Picker.Item label="14" value="14" />
+            <Picker.Item label="15" value="15" />
+            <Picker.Item label="16" value="16" />
+            <Picker.Item label="17" value="17" />
+            <Picker.Item label="18" value="18" />
+            <Picker.Item label="19" value="19" />
+            <Picker.Item label="20" value="20" />
+
+            <Picker.Item label="21" value="21" />
+            <Picker.Item label="22" value="22" />
+            <Picker.Item label="23" value="23" />
+            <Picker.Item label="24" value="24" />
+            <Picker.Item label="25" value="25" />
+            <Picker.Item label="26" value="26" />
+            <Picker.Item label="27" value="27" />
+            <Picker.Item label="28" value="28" />
+            <Picker.Item label="29" value="29" />
+            <Picker.Item label="30" value="30" />
+          </Picker>
+          <H1 color={'black'}>Date</H1>
+        </View>
       </Modal>
     </DarkBg>
   );

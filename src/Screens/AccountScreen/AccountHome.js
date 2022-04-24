@@ -146,6 +146,7 @@ const AccountHome = ({navigation}) => {
             ]}>
             <FlatList
               data={dataOptions}
+              scrollEnabled={false}
               ItemSeparatorComponent={() => (
                 <FullDivider style={{opacity: 0.3, marginVertical: 10}} />
               )}

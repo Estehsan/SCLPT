@@ -18,7 +18,7 @@ const MessageBubble = ({item}) => {
             },
           ]}>
           <Text style={styles.RText}>{item.content}</Text>
-          <H3 font={'BebasNeue-Regular'} size={12}>
+          <H3 color={theme.colors.grey} font={'BebasNeue-Regular'} size={12}>
             {item.ago}
           </H3>
         </View>
@@ -32,14 +32,14 @@ const MessageBubble = ({item}) => {
           style={styles.linear}>
           <Text
             style={[
-              styles.RText,
+              styles.LText,
               {
                 borderTopStartRadius: 0,
               },
             ]}>
             {item.content}
           </Text>
-          <H3 font={'BebasNeue-Regular'} size={12}>
+          <H3 color={'#ffffffE6'} font={'BebasNeue-Regular'} size={12}>
             {item.ago}
           </H3>
         </LinearGradient>
@@ -66,13 +66,20 @@ const styles = StyleSheet.create({
     maxWidth: '70%',
     borderRadius: 18,
     borderTopLeftRadius: 0,
+    borderLeftWidth: 0,
 
     margin: 10,
   },
 
   RText: {
+    color: 'black',
+    fontFamily: 'Montserrat-SemiBold',
+    letterSpacing: 0.5,
+  },
+  LText: {
     color: 'white',
     fontFamily: 'Montserrat-SemiBold',
+    letterSpacing: 0.5,
   },
   lMessage: {
     backgroundColor: theme.colors.primary,
@@ -80,7 +87,7 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
   },
   rMessage: {
-    backgroundColor: 'silver',
+    backgroundColor: theme.colors.white,
     marginLeft: 'auto',
     marginRight: 10,
   },

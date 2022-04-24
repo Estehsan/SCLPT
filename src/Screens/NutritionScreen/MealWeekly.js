@@ -61,7 +61,7 @@ const MealWeekly = ({route, navigation}) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       tabBarScrollEnabled: true,
-      headerTitle: () => <HL>asdsad {id}</HL>,
+      headerTitle: () => <HL>PROGRAM {id}</HL>,
       headerRight: () => (
         <TouchableOpacity>
           <MaterialCommunityIcons
