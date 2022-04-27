@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -16,6 +17,7 @@ import com.BV.LinearGradient.LinearGradientPackage; // <--- This!
 import com.cmcewen.blurview.BlurViewPackage;
 import com.facebook.react.bridge.JSIModulePackage; // <- add
 import com.swmansion.reanimated.ReanimatedJSIModulePackage; // <- add
+import org.devio.rn.splashscreen.SplashScreen; // here
 
 
 public class MainApplication extends Application implements ReactApplication {
@@ -33,7 +35,8 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-          new MainReactPackage(); // <- add
+          new MainReactPackage(),
+            new SplashScreenReactPackage(); // <- add
 
           new LinearGradientPackage(); // <---- and This!
           new BlurViewPackage();
@@ -60,6 +63,8 @@ public class MainApplication extends Application implements ReactApplication {
 
   @Override
   public void onCreate() {
+    SplashScreen.show(this);  // here
+
     super.onCreate();
     // If you opted-in for the New Architecture, we enable the TurboModule system
     ReactFeatureFlags.useTurboModules = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;

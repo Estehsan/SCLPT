@@ -5,6 +5,7 @@ import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 import com.BV.LinearGradient.LinearGradientPackage; // <--- This! 
 import com.cmcewen.blurview.BlurViewPackage;
+// react-native-splash-screen >= 0.3.1
 
 public class MainActivity extends ReactActivity {
 

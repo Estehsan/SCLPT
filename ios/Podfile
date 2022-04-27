@@ -22,6 +22,8 @@ pod 'react-native-google-maps', :path => rn_maps_path
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
   target 'SCLPTTests' do
     inherit! :complete
     # Pods for testing

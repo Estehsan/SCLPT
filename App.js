@@ -1,17 +1,19 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import 'react-native-gesture-handler';
+import SplashScreen from 'react-native-splash-screen';
 
 import {
   configureFonts,
   DefaultTheme,
   Provider as PaperProvider,
-  Title, 
+  Title,
 } from 'react-native-paper';
 
 import {NavigationContainer} from '@react-navigation/native';
 import Navigation from './src/navigation';
 import {LogBox} from 'react-native';
+
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 LogBox.ignoreAllLogs(); //Ignore all log notifications
 
@@ -60,6 +62,9 @@ const theme = {
 };
 
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <PaperProvider theme={theme}>
       <NavigationContainer>
